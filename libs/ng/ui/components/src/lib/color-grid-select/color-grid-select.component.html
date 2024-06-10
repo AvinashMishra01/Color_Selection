@@ -1,0 +1,15 @@
+<div class="grid-container">
+@for(row of grid(); track $index) {
+
+  @for (item of row; track item) {
+  <brew-color-grid-item
+    [checked]="value === item"
+    [value]="item"
+    [size]="itemSize"
+    [disabled]="disabled"
+    />
+  }
+
+}
+
+</div>

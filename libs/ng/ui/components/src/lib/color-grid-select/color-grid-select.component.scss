@@ -1,0 +1,10 @@
+:host {
+  // @apply outline-none;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(60px, max-content)); // Adjust minmax to fit your item sizes
+  gap: 0.5rem; // Add some gap between items
+  width: 100%;
+}
+
