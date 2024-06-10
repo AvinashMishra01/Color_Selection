@@ -246,7 +246,7 @@ export class ColorGridSelectComponent
   handleKeyDown(event: KeyboardEvent) {
     const columns = this.columns-1;
     const grid = this.grid();
-    const totalCircles = grid.flat().length;
+    const totalCircles = grid.flat().length-1;
     const rows = Math.ceil(totalCircles / columns);
 console.log("this is the ata", columns, rows, totalCircles, event.key, this.selectedCircle)
     switch (event.key) {
@@ -307,98 +307,35 @@ console.log("this is the ata", columns, rows, totalCircles, event.key, this.sele
     }
   }
 
-// end 
-  // @HostListener('keydown', ['$event'])
-  //  handleKeyDown(event: KeyboardEvent) {
-  //   console.log("key press", event.key)
-  //   switch (event.key) {
-  //     case 'ArrowUp':
-  //       this._navigateVertically(-1);
-  //       break;
-  //     case 'ArrowDown':
-  //       this._navigateVertically(1);
-  //       break;
-  //   }
 
-    // switch (event.keyCode) {
-    //   case UP_ARROW:
-    //     // add logic
-    //     break;
-    //   case DOWN_ARROW:
-    //     // add logic
-    //     break;
-    //   case LEFT_ARROW:
-    //     // add logic
-    //     break;
-    //   case RIGHT_ARROW: {
-    //     // add logic
-    //     break;
-    //   }
-    // }
 
-    // @fixme remove the following code block after
-    // the above navigation logic is completed
-    // ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
-  //   if (
-  //     includes([UP_ARROW, DOWN_ARROW, LEFT_ARROW, RIGHT_ARROW], event.keyCode)
-  //   ) {
-  //     console.log("this is parent ")
-      // this._keyManager.onKeydown(event);
-  //   }
-  //   // ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
-  // }
-  private _navigateVertically(direction: number) {
+  //private _navigateVertically(direction: number) {
     // Extract the value from the Signal
-    const grid = this.grid();
+  //  const grid = this.grid();
   
-    if (!grid || !grid.length) return;
+   // if (!grid || !grid.length) return;
   
-    const flatGrid = grid.flat();
-    const currentIndex = flatGrid.findIndex((item) => item === this._value);
-    const numRows = grid.length;
-    const numCols = grid[0].length;
+   // const flatGrid = grid.flat();
+   // const currentIndex = flatGrid.findIndex((item) => item === this._value);
+   // const numRows = grid.length;
+   // const numCols = grid[0].length;
   
     // Calculate the index of the item after moving vertically
-    let newIndex = currentIndex + direction * numCols;
-  console.log("vertical",flatGrid,currentIndex,numRows,numRows,newIndex)
+  //  let newIndex = currentIndex + direction * numCols;
+ // console.log("vertical",flatGrid,currentIndex,numRows,numRows,newIndex)
     // Ensure newIndex is within the bounds of the grid
-    newIndex = Math.max(0, Math.min(flatGrid.length - 1, newIndex));
-  console.log("new value is ", newIndex)
+   // newIndex = Math.max(0, Math.min(flatGrid.length - 1, newIndex));
+ // console.log("new value is ", newIndex)
     // Update the value of the active item
-    const newValue = flatGrid[newIndex];
-    if (newValue !== this._value) {
-      this._value = newValue;
-      this.emitChange(this._value);
-    }
-  }
+  //  const newValue = flatGrid[newIndex];
+  ////  if (newValue !== this._value) {
+   //   this._value = newValue;
+   //   this.emitChange(this._value);
+   // }
+ // }
   
 
-  // private _navigateVertically(direction: number) {
-  //   // Extract the value from the Signal
-
-  //   const grid = this.grid();
-  // console.log("this is grid ", grid.length, direction)
-  //   if (!grid || !grid.length) return;
-  
-  //   const flatGrid = grid.flat();
-  //   const currentIndex = flatGrid.findIndex(item => item === this._value);
-  //   const numRows = grid.length;
-  //   const numCols = grid[0].length;
-  
-  //   // Calculate the index of the item after moving vertically
-  //   let newIndex = currentIndex + direction * numCols;
-  
-  //   // Ensure newIndex is within the bounds of the grid
-  //   newIndex = Math.max(0, Math.min(flatGrid.length - 1, newIndex));
-  
-  //   // Update the value of the active item
-  //   this._value = flatGrid[newIndex];
-
-  //   // Emit change event
-  //   console.log("this is the directions vale ==", this._value)
-  //   this.emitChange(this._value);
-  // }
-  
+ 
 
   /** Handles focusout events within the list. */
   private readonly _handleFocusout = () => {
@@ -449,18 +386,10 @@ console.log("this is the ata", columns, rows, totalCircles, event.key, this.sele
   }
 
 
-// Avinash 
-
-
-
 get columns(): number {
   console.log("inner width", Math.floor(window.innerWidth / 70))
   return Math.floor(window.innerWidth / 70); // 50px circle + 20px gap (10px each side)
 }
-
-
-
-// Avinash end 
 
 
 
